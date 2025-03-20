@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Event Management{% endblock %}</title>
+    {% load static %}
+    <link href="{% static 'css/output.css' %}" rel="stylesheet">
+</head>
+<body class="bg-gray-100">
+    <nav class="bg-blue-500 p-4 mb-4">
+        <div class="container mx-auto flex justify-between items-center">
+            <div>
+                <a href="{% url 'event_list' %}" class="text-white text-lg">Events</a>
+                <a href="{% url 'participant_list' %}" class="ml-4 text-white text-lg">Participants</a>
+                <a href="{% url 'category_list' %}" class="ml-4 text-white text-lg">Categories</a>
+                <a href="{% url 'organizer_dashboard' %}" class="ml-4 text-white text-lg">Dashboard</a>
+            </div>
+        </div>
+    </nav>
+    <div class="container mx-auto">
+        {% block content %}{% endblock %}
+    </div>
+</body>
+</html>
+

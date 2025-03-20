@@ -1,0 +1,15 @@
+{% extends 'dashboard.html' %}
+
+{% block title %}Participant List{% endblock %}
+
+{% block content %}
+<h1 class="text-2xl font-bold mb-4">Participant List</h1>
+<ul class="bg-white shadow overflow-hidden sm:rounded-lg divide-y divide-gray-200">
+    {% for participant in participants %}
+        <li class="px-4 py-4 sm:px-6">
+            <a href="{% url 'participant_detail' participant.pk %}" class="text-lg font-medium text-blue-600 hover:underline">{{ participant.name }}</a>
+        </li>
+    {% endfor %}
+</ul>
+<a href="{% url 'create_participant' %}" class="mt-4 inline-block bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-700">Create New Participant</a>
+{% endblock %}

@@ -1,0 +1,19 @@
+{% extends 'dashboard.html' %}
+
+{% block title %}Category Detail{% endblock %}
+
+{% block content %}
+<h1 class="text-2xl font-bold mb-4">{{ category.name }}</h1>
+<p>{{ category.description }}</p>
+<h2 class="text-xl font-bold mt-4">Events</h2>
+<ul class="list-disc list-inside">
+    {% for event in category.event_set.all %}
+        <li>{{ event.name }}</li>
+    {% endfor %}
+</ul>
+<a href="{% url 'update_category' category.pk %}" class="mt-4 inline-block bg-yellow-500 text-white px-4 py-2 rounded hover:bg-yellow-700">Edit Category</a>
+<form action="{% url 'delete_category' category.pk %}" method="post" class="inline-block">
+    {% csrf_token %}
+    <button type="submit" class="mt-4 inline-block bg-red-500 text-white px-4 py-2 rounded hover:bg-red-700">Delete Category</button>
+</form>
+{% endblock %}
