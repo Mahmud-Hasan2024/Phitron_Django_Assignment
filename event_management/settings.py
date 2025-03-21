@@ -11,7 +11,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = config('SECRET_KEY')
+SECRET_KEY = 'django-insecure-tn5k70gvndmkai&lh$end-$u-0mjvj9^=jy5_%-s91=pla2*rr'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -97,7 +97,7 @@ WSGI_APPLICATION = 'event_management.wsgi.application'
 
 DATABASES = {
     'default': dj_database_url.config(
-        default=f'postgresql://{config("USER")}:{config("PASSWORD")}@{config("HOST")}:{config("PORT")}/{config("NAME")}',
+        default='postgresql://event_management_db_c4gq_user:ATXliyWRfyAmguqWUUkYAceVrF2YVRj9@dpg-cve2rvrv2p9s73dj8kug-a.oregon-postgres.render.com/event_management_db_c4gq',
         conn_max_age=600
     )
 }
