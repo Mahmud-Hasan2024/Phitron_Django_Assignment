@@ -14,3 +14,4 @@ pytweening==1.2.0
 sqlparse==0.5.3
 typing_extensions==4.12.2
 tzdata==2025.1
+django-debug-toolbar==4.0.0
